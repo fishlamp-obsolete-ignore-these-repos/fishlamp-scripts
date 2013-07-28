@@ -6,6 +6,9 @@
 #  Created by Mike Fullerton on 6/22/13.
 #
 
+MY_PATH="`dirname \"$0\"`"              
+MY_PATH="`( cd \"$MY_PATH\" && pwd )`"  
+
 function usage() {
     echo "prints help for fishlamp commands"
 }
@@ -17,9 +20,7 @@ fi
 
 PARM="$1"
 
-INSTALL_PATH="`fishlamp script-dir`"
-
-cd "$INSTALL_PATH/fishlamp-commands"
+cd "$MY_PATH"
 
 FILES=`ls`
 for file in $FILES; do
@@ -29,11 +30,11 @@ for file in $FILES; do
     if [[ "$extension" == "sh" ]]; then
 
         if [[ "$PARM" != "-s" ]]; then
-            echo "fishlamp $filename_no_extension:"
+            echo "  $filename_no_extension:"
             bash "$file" --help | awk '{print "    "$0}'
             echo ""
         else
-            echo "fishlamp $filename_no_extension"
+            echo "  $filename_no_extension"
         fi
     fi
 done

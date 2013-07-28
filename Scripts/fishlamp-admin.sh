@@ -9,10 +9,9 @@ if [ "$1" == "--help" ]; then
     exit 0;
 fi
 
+SELF_NAME="`basename \"$0\"`"
 MY_PATH="`dirname \"$0\"`"
 MY_PATH="`( cd \"$MY_PATH\" && pwd )`"
-
-SUB_PATH="$MY_PATH/fishlamp-commands"
 
 if [ "$1" == "" ]; then
     echo "commands:"
@@ -23,14 +22,19 @@ if [ "$1" == "" ]; then
         filename=$(basename "$file")
 
         echo "$filename" | awk '{print "    "$0}'
+
+        if [ -d "$file-commands" ]; then
+            if [ -f "$file-commands/help.sh" ]; then
+                "$file-commands/help.sh" | awk '{print "    "$0}'
+            else
+                ls "$file-commands"
+            fi
+        fi
+
     done
 
     echo ""
-
-    echo "fishlamp command parameters:"
-    "$SUB_PATH/help.sh" -s | awk '{print "    "$0}'
-    echo ""
-    echo "try 'fishlamp help' for more info"
+    echo "try '$SELF_NAME help' for more info"
     echo ""
 
     exit 1
@@ -42,8 +46,10 @@ MY_PARMS=${*:2}
 
 # echo "command = $MY_COMMAND $PARMS"
 
-if [ -f "$SUB_PATH/$MY_SCRIPT" ]; then
-    "$SUB_PATH/$MY_SCRIPT" $MY_PARMS
+script_path="$SELF_NAME-commands/$MY_SCRIPT"
+
+if [ -f "$script_path" ]; then
+    "$script_path" $MY_PARMS
 else
     echo "unknown command \"$MY_COMMAND\""
     exit 1

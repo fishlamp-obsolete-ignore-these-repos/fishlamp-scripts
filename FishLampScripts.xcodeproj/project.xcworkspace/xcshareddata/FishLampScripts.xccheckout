@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8CE66E71-B09E-4586-8795-90EE39DA7799</string>
+	<key>IDESourceControlProjectName</key>
+	<string>FishLampScripts</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>2241264F-C82F-402A-82F7-3B0667CA089A</key>
+		<string>ssh://github.com/fishlamp/fishlamp-scripts.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>FishLampScripts.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2241264F-C82F-402A-82F7-3B0667CA089A</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/fishlamp/fishlamp-scripts.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2241264F-C82F-402A-82F7-3B0667CA089A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2241264F-C82F-402A-82F7-3B0667CA089A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>fishlamp-scripts</string>
+		</dict>
+	</array>
+</dict>
+</plist>
